@@ -8,5 +8,5 @@
   <li><h1>Supports the QQVGA Resolution</h1></li>
   <li><h1>Made with ❤️ and 💧 (not ☕)</h1></li>
 </ol>
-<h1>Live Demo <a href='https://fnafrad.github.io/Smart-Screen-Light-CloudPhone/'>Here</a></h1>
+<h1>Live Demo <a href='https://fnafrad.github.io/Smart-Glow-CloudPhone/'>Here</a></h1>
 <h1>Enjoy :)</h1>
