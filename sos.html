@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html manifest="offline.appcache">
 <head>
   <meta charset="UTF-8">
-  <title>Emergency SOS</title>
+  <title>SOS Glow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       transition: background-color 0.2s;
-      font-family: Roboto;
+      font-family: 'Open Sans', 'Noto Sans', sans-serif;
     }
     /* Overlay instructions */
-    h5 {
+    h3 {
         position: absolute;
         top: 10px;
         width: 100%;
@@ -27,7 +26,7 @@
   </style>
 </head>
 <body>
-    <h5>Press 4 for silent SOS blink, 6 for SOS blink with sound, and 5 for color options</h5>
+    <h3>Press 4 to toggle SOS blinking in morse code without sound, Press 6 to toggle SOS blinking in morse code with sound and Press 5 for more Color Options</h3>
   <script>
     // Global state: currentMode can be "none", "mode4" (SOS without sound), or "mode6" (SOS with sound).
     let currentMode = "none";
@@ -47,8 +46,14 @@
       gainNode.connect(audioCtx.destination);
       oscillator.frequency.value = frequency;
       gainNode.gain.value = volume;
-      oscillator.start();
-      setTimeout(() => oscillator.stop(), duration);
+      
+      // Start oscillator at the current time to synchronize properly
+      oscillator.start(audioCtx.currentTime);
+
+      // Stop oscillator after the specified duration
+      setTimeout(() => {
+        oscillator.stop();
+      }, duration);
     }
 
     // Morse code durations in milliseconds.
