@@ -1,5 +1,5 @@
 <h1>This is a Smart Glow App For Cloud Phones (by CloudMosa)!</h1>
-<h1>This is used if the Feature Phone doesn't have a Torch Light and/or The user wants to Have more color lights!</h1>
+<h1>This is used if the Feature Phone doesn't have a Torch Light, The user wants to Have more color lights and If they want a SOS Blinking Light!</h1>
 <h1>Features:</h1>
 <ol>
   <li><h1>Brightness Control (Using the Keys 4 and 6)</h1></li>
