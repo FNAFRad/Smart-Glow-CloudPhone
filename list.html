@@ -125,15 +125,17 @@
         // Navigate to the selected page
         const selectedItem = list[selectedIndex];
         const page = selectedItem.getAttribute('data-page');
-        window.location.href = page;
-      } else if (e.key === 'SoftRight') {
-        // Go back to the previous page
-        window.history.back();
+        window.location.replace(page);
       }
     });
   
     // Initial selection of the first item
     updateSelection();
+
+    window.addEventListener("back", (event) => {
+    event.preventDefault();
+      window.close()
+    });
   </script>  
 </body>
 </html>
